@@ -1,0 +1,31 @@
+Certainly! The iterative preorder traversal of a binary tree using a stack involves the following logic:
+
+### Data Structures and Functions
+- `struct Node` represents a node in the binary tree with data, left, and right pointers.
+- `struct Stack` serves as a simple stack structure.
+- `createStack()` initializes a new stack.
+- `isEmpty()` checks if the stack is empty.
+- `push()` adds an element to the stack.
+- `pop()` removes and returns the top element from the stack.
+- `newNode()` creates a new node with the given data.
+
+### Iterative Preorder Traversal
+1. **Initialization**:
+    - Create an empty stack to assist in the traversal.
+    - Push the root node of the tree onto the stack to begin the traversal.
+
+2. **Traversing and Processing Nodes**:
+    - While the stack is not empty:
+    - Pop a node from the stack.
+    - Print the value of the popped node (this is the 'preorder' step).
+    - Push the right child of the node onto the stack (if it exists). Since the stack is Last-In-First-Out (LIFO), this ensures that the left child, which is pushed later, will be processed first due to the nature of the stack.
+    - Push the left child of the node onto the stack (if it exists).
+
+3. **Printing Order**:
+    - The printing occurs in a preorder sequence: root, left subtree, right subtree.
+
+4. **Explanation**:
+    - By using a stack, the algorithm mimics the behavior of the recursive preorder traversal without using actual recursion.
+    - Nodes are processed in the order of root, left child, and then right child. The stack aids in controlling the order of processing the nodes in a way that replicates the preorder traversal pattern.
+
+This iterative approach allows traversal of the entire tree, visiting nodes in a preorder sequence, printing their values without using the call stack present in recursive solutions. The stack facilitates the order in which nodes are processed, enabling a controlled preorder traversal without making use of recursive function calls.

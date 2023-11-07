@@ -1,0 +1,30 @@
+The provided code performs an iterative postorder traversal of a binary tree using two stacks. Here's an explanation of the logic:
+
+### Structures and Functions
+- `struct Node` represents a node in the binary tree with data, left, and right pointers.
+- `struct Stack` is a simple stack structure used for storing tree nodes.
+- `createStack` initializes a new stack.
+- `isEmpty` checks if the stack is empty.
+- `push` adds an element to the stack.
+- `pop` removes and returns the top element from the stack.
+- `newNode` creates a new node with the given data.
+
+### Iterative Postorder Traversal
+1. **Stack Setup**:
+   - Two stacks (`stack1` and `stack2`) are created.
+   - `stack1` is used to process nodes, while `stack2` is used to reverse the order for postorder traversal.
+
+2. **Traversing and Pushing Nodes**:
+   - Begin by pushing the root node onto `stack1`.
+   - While `stack1` is not empty, pop nodes from `stack1` and push them onto `stack2`.
+   - When pushing onto `stack2`, ensure left child nodes are pushed first to reverse the order.
+   - This process is done until all nodes are processed.
+
+3. **Printing in Postorder**:
+   - Once all nodes are pushed onto `stack2`, start popping from `stack2`.
+   - Popping from `stack2` yields the nodes in postorder, allowing the printing of node values.
+
+4. **Explanation**:
+   - The postorder sequence is left-right-root, so by pushing nodes in the order of root-right-left (onto `stack2`), they can be printed in the correct postorder sequence when popping from `stack2`.
+
+This two-stack approach effectively reverses the order of traversal to achieve the postorder sequence without the use of recursion. It processes the nodes in a manner that facilitates the printing of nodes in the postorder sequence once the traversal is completed.

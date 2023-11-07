@@ -1,0 +1,35 @@
+/*LOGIC: 
+The iterative postorder traversal with flag-based logic works as follows:
+
+1. **Initialization**:
+    - Initialize a stack to hold the nodes.
+    - Set the flag for each node as 0 (indicating it hasn't been visited yet).
+
+2. **While Loop**:
+    - Traverse the tree iteratively with a while loop until the stack becomes empty.
+  
+3. **Push Left Nodes with Flag 1**:
+    - Start with the current node.
+    - While the current node exists, traverse its left subtree.
+    - During this traversal, push each node onto the stack with its flag set to 1, indicating that it's been visited during the left subtree traversal.
+
+4. **Flag Set to -1 and Traverse Right Subtree**:
+    - When a NULL node is reached (indicating the end of the left subtree), set the flag of the current node to -1 to mark that the left subtree traversal of that node is complete.
+    - Now, move to the right subtree of that node.
+
+5. **Print Node if Flag is -1**:
+    - When popping a node from the stack, check its flag.
+    - If the flag is -1, it means the right subtree traversal is also done. Print the value of the node.
+    - If the flag is not -1, this indicates that the right subtree of that node is yet to be traversed. Hence, continue traversing the right subtree.
+
+6. **Backtracking**:
+    - After printing or finishing the right subtree traversal, if the stack is not empty, pop the top node from the stack.
+    - If the node's flag is -1 (indicating that both left and right subtrees have been traversed), continue popping nodes and printing values.
+    - If the flag is not -1, it means the right subtree traversal for that node isn't complete. Set the flag to -1 and proceed to traverse the right subtree of that node.
+
+7. **Completion**:
+    - When the stack becomes empty, the traversal is completed, and the postorder sequence of the tree nodes has been printed.
+
+This algorithm imitates the postorder traversal by first traversing left, marking the end of the left subtree, traversing right, and then printing the node's value after both left and right subtrees have been visited. This process continues until the entire tree is traversed.
+
+This approach efficiently simulates the recursive postorder traversal without using recursion, managing the state of traversal using flags for each node in a single stack-based iteration.*/
