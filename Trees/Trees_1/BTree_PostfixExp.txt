@@ -1,0 +1,22 @@
+To create a binary tree from a postfix expression, you can use a stack to build the tree. 
+The postfix expression is scanned from left to right, and based on the operands and operators encountered, 
+a binary tree is constructed.
+
+Explanation:
+
+1. The buildExpressionTree function builds a binary tree from a postfix expression.
+
+2. It iterates through the postfix expression character by character.
+
+3. If an operand is encountered, it creates a node and pushes it onto the stack.
+
+4. If an operator is encountered, it pops two nodes from the stack (representing the operands), 
+constructs a node for the operator, and sets the popped nodes as its left and right children.
+
+5. After scanning the entire postfix expression, the final root of the tree is returned from the stack.
+
+6. The inorder function performs an inorder traversal to print the infix expression obtained from the 
+constructed tree.
+
+7. This code builds a binary tree from a given postfix expression and then prints the corresponding 
+infix expression using an inorder traversal of the tree.
