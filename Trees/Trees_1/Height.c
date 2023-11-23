@@ -30,6 +30,22 @@ int height(struct Node* root) {
     }
 }
 
+/*recursive function to find the height of a tree
+int height (NODEPTR root)
+{
+if(root==NULL)
+return 0;
+return( 1+ max(height (root→lchild), height(root→rchild)));
+}
+//Max function
+int max(int a, int b){
+if(a>b)
+return a;
+else
+return b;
+}
+*/
+
 // Main function
 int main() {
     // Create a sample binary tree
@@ -46,18 +62,3 @@ int main() {
     return 0;
 }
 
-/*recursive function to find the height of a tree
-int height (NODEPTR root)
-{
-if(root==NULL)
-return 0;
-return( 1+ max(height (root→lchild), height(root→rchild)));
-}
-//Max function
-int max(int a, int b){
-if(a>b)
-return a;
-else
-return b;
-}
-*/
