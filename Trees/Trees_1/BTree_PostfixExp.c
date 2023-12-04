@@ -40,7 +40,7 @@ struct Node* buildExpressionTree(char postfix[]) {
             stack[++top] = node; //Push the operand node onto the stack
         }
     }
-
+    printf("%d\n",top);
     return stack[top]; // Return the root of the tree
 }
 

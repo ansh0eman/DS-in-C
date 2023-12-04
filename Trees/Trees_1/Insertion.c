@@ -56,17 +56,31 @@ void inOrderTraversal(Nodeptr root) {
     }
 }
 
+Nodeptr CreateBinaryTree(int item){
+    int x;
+    if (item!=-1) { //until input is not equal to -1
+        Nodeptr temp = getnode();
+        temp->data = item;
+        printf("Enter the lchild of %d :",item);
+        scanf("%d",&x);
+        temp->lchild = CreateBinaryTree(x);
+        printf("Enter the rchild of %d :",item);
+        scanf("%d",&x);
+        temp->rchild = CreateBinaryTree(x);
+        return temp;
+    }
+    return NULL;
+}
+
+
 // Main function
 int main() {
     Nodeptr root = getnode();
-    root->data = 1;
-    root->lchild = root->rchild = NULL;
-
-    // Insert nodes into the binary tree using direction strings
-    insert(root, "L", 2); // Insert 2 as left child
-    insert(root, "R", 3); // Insert 3 as right child
-    insert(root, "LL", 4); // Insert 4 as left child of the left child
-
+    int item;
+    printf("Creating the tree : \n");
+    printf("Enter the root :");
+    scanf("%d",&item);
+    root=CreateBinaryTree(item);
     // Print the binary tree using in-order traversal
     printf("Binary Tree (In-order traversal): ");
     inOrderTraversal(root);
